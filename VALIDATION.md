@@ -1,4 +1,14 @@
-# Validation — 1.1.5
+# Validation — 1.1.6
+
+Replaced the separate live search/native selector interaction with a single labelled combobox and visible title suggestions. The native controls remain a progressive fallback. Recent options and request configuration are server-rendered; the admin stylesheet/script are scoped to the setup page, with a page-slug fallback for hook detection.
+
+Real WordPress 7.1.4 with Blocksy and SQLite ran under PHP-WASM 8.3.33. Database/API checks verified 20 recent posts, nonblank labels, old-title searches, interview/descendant/draft/page exclusions, the homepage rendering override, adjacent-list exclusion, preserved content/menus, actual admin asset enqueueing, and embedded nonce configuration. An end-to-end Chromium check used the actual WordPress AJAX handler and database: open recent titles, type a title to find an older post, select it, submit the actual nonce-protected save handler, and confirm the stored selection with unchanged homepage content and menus. A bad AJAX nonce returned HTTP 403.
+
+Browser tests also covered immediate local filtering, click and keyboard selection, Escape restoration, empty/error messages, stale request protection, cancelling results when closing the dropdown, title escaping, restoring recent posts, desktop/mobile bounds, no saves while searching, no JavaScript errors, and fallback controls when configuration is missing. The prior 28 isolated PHP behaviour/security checks still pass. PHP 7.4 syntax parsing, JavaScript syntax, CSS/JSON parsing and ZIP identity/integrity passed.
+
+These checks use local test fixtures, not the user’s live WordPress admin or its full plugin configuration. No live deployment was performed.
+
+## Previous checks — 1.1.5
 
 The new selector is separate from the existing starter-setup form. It stores a theme setting and applies it only to homepage writing-block rendering. Both search and save require administrator permissions and valid nonces. Search queries target published post titles, exclude interviews and descendant categories, order by publication date/ID, and return at most 20 choices.
 

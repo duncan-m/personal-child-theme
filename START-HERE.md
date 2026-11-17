@@ -1,4 +1,4 @@
-# Duncan Malcolm theme — version 1.1.5
+# Duncan Malcolm theme — version 1.1.6
 
 This ZIP is the theme itself. Upload it directly through Appearance → Themes → Add New → Upload Theme. Do not extract it first. Keep the free Blocksy parent theme installed. No separate plugin is required.
 
@@ -22,7 +22,7 @@ Use Edit homepage on the setup screen. Hero text, portrait/caption and company s
 
 The example posts are published only if you select that option. Their bodies clearly say they are starter examples. Replace those bodies, review the About text and add real interview destinations before launch. The homepage uses the mockup’s titles and featured-essay excerpt; they are not completed articles.
 
-Choose the featured essay in Appearance → Duncan Malcolm Setup → Featured homepage essay, even with Gutenberg disabled. The selector shows the 20 most recent published writing posts with dates. Search by title to find older posts, choose one and click Save featured essay. Saving does not reapply setup, change menus or edit homepage content. Automatic uses the latest eligible post; Keep existing homepage block setting restores the original block-controlled choice. With Gutenberg enabled, the Writing & ideas block’s settings remain available when the setup selector is set to Keep existing homepage block setting. Use the post Excerpt panel for featured description and the Editorial details box for subtitle/optional external interview URL. Interviews use the category slug `interviews`. They are excluded from writing queries, including the Writing archive. The featured essay is excluded from the adjacent three-post list.
+Choose the featured essay in Appearance → Duncan Malcolm Setup → Featured homepage essay, even with Gutenberg disabled. Click the Featured essay field to open a dropdown of recent published writing posts with dates. Type in the same field to see matching post titles, click a result and then click Save featured essay. Older titles are searched as you type; clearing the field restores recent posts. Saving does not reapply setup, change menus or edit homepage content. Automatic uses the latest eligible post; Keep existing homepage block setting restores the original block-controlled choice. With Gutenberg enabled, the Writing & ideas block’s settings remain available when the setup selector is set to Keep existing homepage block setting. Use the post Excerpt panel for featured description and the Editorial details box for subtitle/optional external interview URL. Interviews use the category slug `interviews`. They are excluded from writing queries, including the Writing archive. The featured essay is excluded from the adjacent three-post list.
 
 ## Further changes
 

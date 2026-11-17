@@ -4,17 +4,25 @@ A WordPress child theme for [Blocksy](https://wordpress.org/themes/blocksy/), wi
 
 ## Installation
 
-[Download duncan-malcolm-theme-v1.1.5.zip](https://github.com/duncan-m/personal-child-theme/raw/refs/heads/main/downloads/duncan-malcolm-theme-v1.1.5.zip)
+[Download duncan-malcolm-theme-v1.1.6.zip](https://github.com/duncan-m/personal-child-theme/raw/refs/heads/main/downloads/duncan-malcolm-theme-v1.1.6.zip)
 
 Use this packaged ZIP for WordPress uploads. GitHub's **Code → Download ZIP** adds a repository-based folder name, which WordPress treats as a different theme.
 
-The package preserves the original identity: folder `duncan-malcolm`, theme name `Duncan Malcolm`, parent `blocksy`, and text domain `duncan-malcolm`. Version 1.1.5 replaces the original 1.1.0 theme. During upload, choose **Replace current with uploaded** when WordPress offers it.
+The package preserves the original identity: folder `duncan-malcolm`, theme name `Duncan Malcolm`, parent `blocksy`, and text domain `duncan-malcolm`. Version 1.1.6 replaces the original 1.1.0 theme. During upload, choose **Replace current with uploaded** when WordPress offers it.
 
 1. Install the free Blocksy parent theme.
 2. Upload the packaged `duncan-malcolm` theme ZIP via **Appearance → Themes → Add New → Upload Theme**, then activate it. For a Git checkout, place this repository in `wp-content/themes/duncan-malcolm`.
 3. Follow [START-HERE.md](START-HERE.md). The optional **Appearance → Duncan Malcolm Setup** action creates starter content and changes site settings when you apply it.
 
 Requires WordPress 6.6+ and PHP 7.4+. Review [VALIDATION.md](VALIDATION.md) for testing scope and staging checks.
+
+## Version 1.1.6
+
+The featured essay picker is now a single searchable dropdown. In **Appearance → Duncan Malcolm Setup → Featured homepage essay**, click the **Featured essay** field to open recent post names. Type in that field to see matching titles, click one and select **Save featured essay**. Arrow keys and Enter also select a result; Escape closes the dropdown and restores the selection.
+
+Recent choices are embedded in the page and open immediately. Typing filters available titles while searching the full published-post catalogue. Clearing the field restores recent posts. Empty results and failed searches display messages; your saved selection is preserved. Search configuration travels with the field rather than depending on a separate global script. The native dropdown and server-side Search form remain as a fallback if the enhancement cannot initialise.
+
+No setup reapplication is required. This release does not change public styling or your existing featured selection.
 
 ## Version 1.1.5
 
@@ -58,7 +66,7 @@ Existing mobile overrides are preserved. The editor imports the same stylesheet.
 From the repository root:
 
 ```sh
-git archive --format=zip --prefix=duncan-malcolm/ --output=duncan-malcolm-theme-v1.1.5.zip HEAD -- assets blocks patterns templates functions.php inc-editorial.php inc-featured.php inc-setup.php style.css theme.json LICENSE.txt README.md START-HERE.md VALIDATION.md validation-results.json
+git archive --format=zip --prefix=duncan-malcolm/ --output=duncan-malcolm-theme-v1.1.6.zip HEAD -- assets blocks patterns templates functions.php inc-editorial.php inc-featured.php inc-setup.php style.css theme.json LICENSE.txt README.md START-HERE.md VALIDATION.md validation-results.json
 ```
 
 Theme source files live at the repository root. No build step or companion plugin is required.

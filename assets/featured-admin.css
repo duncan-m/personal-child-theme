@@ -1,0 +1,13 @@
+.dm-featured-picker {position:relative;width:100%;max-width:640px;margin-block:1em;}
+.dm-featured-combobox {position:relative;display:flex;align-items:stretch;margin-top:6px;}
+.dm-featured-picker .dm-featured-input {width:100%;max-width:none;min-width:0;margin:0;padding:7px 42px 7px 10px;min-height:38px;border:1px solid #8c8f94;border-radius:4px;background:#fff;color:#1d2327;font-size:14px;}
+.dm-featured-picker .dm-featured-toggle {position:absolute;inset:1px 1px 1px auto;width:38px;border:0;border-left:1px solid #dcdcde;background:#f6f7f7;border-radius:0 3px 3px 0;cursor:pointer;color:#1d2327;}
+.dm-featured-picker .dm-featured-options {position:absolute;inset:100% 0 auto;z-index:100;margin:4px 0 0;padding:4px;max-height:300px;overflow-y:auto;background:#fff;color:#1d2327;border:1px solid #8c8f94;border-radius:4px;box-shadow:0 4px 12px #0002;}
+.dm-featured-picker .dm-featured-option {padding:10px;cursor:pointer;white-space:normal;overflow-wrap:anywhere;line-height:1.4;border-radius:2px;}
+.dm-featured-picker .dm-featured-option[aria-selected="true"] {font-weight:600;}
+.dm-featured-picker .dm-featured-option.is-active,.dm-featured-picker .dm-featured-option:hover {background:#2271b1;color:#fff;}
+.dm-featured-picker .dm-featured-empty {padding:12px;color:#50575e;}
+.dm-featured-picker [hidden] {display:none!important;}
+.dm-featured-selection {overflow-wrap:anywhere;}
+
+#dm-featured-search-form[hidden] {display:none!important;}

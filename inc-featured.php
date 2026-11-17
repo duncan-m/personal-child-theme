@@ -8,12 +8,13 @@ function dm_featured_is_eligible($id) {
         && (!$excluded || !has_category($excluded, $post->ID));
 }
 function dm_featured_choices($search = '') {
-    $query = new WP_Query(array(
+    $args = array(
         'post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 20,
         'orderby' => array('date' => 'DESC', 'ID' => 'DESC'), 'ignore_sticky_posts' => true,
         'no_found_rows' => true, 'category__not_in' => dm_theme_editorial_interview_ids(),
-        's' => $search, 'search_columns' => array('post_title'),
-    ));
+    );
+    if ($search !== '') { $args['s'] = $search; $args['search_columns'] = array('post_title'); }
+    $query = new WP_Query($args);
     $choices = array();
     foreach ($query->posts as $post) {
         $choices[] = array('id' => $post->ID, 'label' => dm_featured_label($post->ID));
@@ -47,12 +48,14 @@ function dm_featured_screen() {
     </form>
     <form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" id="dm-featured-save-form">
     <input type="hidden" name="action" value="dm_save_featured"><?php wp_nonce_field('dm_save_featured'); ?>
-    <p><label for="dm-featured-post"><strong>Featured essay</strong></label><br>
+    <div id="dm-featured-picker" class="dm-featured-picker" data-search-url="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" data-search-nonce="<?php echo esc_attr(wp_create_nonce('dm_search_featured')); ?>">
+    <label for="dm-featured-post"><strong>Featured essay</strong></label><br>
     <select id="dm-featured-post" name="featured_post" style="width:100%;max-width:640px" aria-describedby="dm-featured-help dm-featured-status">
     <option value="block" <?php selected($value, 'block'); ?>>Keep existing homepage block setting</option>
     <option value="0" <?php selected($value, '0'); ?>>Automatic — latest published writing post</option>
     <?php foreach ($choices as $choice) : ?><option value="<?php echo esc_attr($choice['id']); ?>" <?php selected($value, (string) $choice['id']); ?>><?php echo esc_html($choice['label']); ?></option><?php endforeach; ?>
-    </select></p>
+    </select>
+    </div>
     <p id="dm-featured-status" role="status" aria-live="polite"><?php echo $search === '' ? 'Showing recent posts (up to 20).' : 'Showing matching titles (up to 20). Refine your search if needed.'; ?></p>
     <p id="dm-featured-help" class="description">Saving only changes the featured essay. It does not reapply site setup or edit homepage content. Your selected essay is excluded from the adjacent writing list.</p>
     <?php submit_button('Save featured essay', 'primary', 'submit', false); ?>
@@ -61,9 +64,9 @@ function dm_featured_screen() {
     <?php
 }
 add_action('admin_enqueue_scripts', function ($hook) {
-    if ($hook !== 'appearance_page_dm-setup') { return; }
+    if ($hook !== 'appearance_page_dm-setup' && (!isset($_GET['page']) || $_GET['page'] !== 'dm-setup')) { return; }
+    wp_enqueue_style('dm-featured-admin', get_stylesheet_directory_uri() . '/assets/featured-admin.css', array(), filemtime(__DIR__ . '/assets/featured-admin.css'));
     wp_enqueue_script('dm-featured-admin', get_stylesheet_directory_uri() . '/assets/featured-admin.js', array(), filemtime(__DIR__ . '/assets/featured-admin.js'), true);
-    wp_localize_script('dm-featured-admin', 'dmFeatured', array('url' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('dm_search_featured')));
 });
 add_action('wp_ajax_dm_search_featured', function () {
     if (!current_user_can('manage_options')) { wp_send_json_error(array('message' => 'Permission denied.'), 403); }
