@@ -1,4 +1,12 @@
-# Validation — 1.1.3
+# Validation — 1.1.4
+
+Fetched the live HTML and stylesheets for the About page and payment-fraud post supplied by the user. The child stylesheet was loading, but standard page/post title sizes and palette inherited Blocksy defaults. This release adds dm-document for standard singular posts/pages (excluding the front page and Editorial Homepage template), scoped reading-layout styles and body-level palette tokens.
+
+Headless Chromium checks against captured HTML and styles (with the updated CSS and body class applied locally) passed at 1536, 1280, 900, 680, 375 and 320px for both URLs: reading column at most 760px, serif title, navy 16.2px body copy, orange article links and no horizontal overflow. Desktop screenshots were inspected. External images/scripts were blocked in these fixtures. PHP syntax parsing, CSS parsing and JSON parsing passed; ZIP integrity and original theme identity verified.
+
+These checks did not deploy the update to the live site or run a WordPress runtime. Review the installed update with real media, plugins and the editor. The article includes imported nested entry markup and archived external image URLs; content and destinations were preserved.
+
+## Previous checks — 1.1.3
 
 All 35 font-size declarations (including Blocksy entry-content font-size) now use the shared 0.9 scale. Headless Chromium computed-style comparisons confirmed 18 representative text elements render at exactly 90% of their 1.1.2 sizes (within 0.01px) at 320, 375, 680, 900, 1280 and 1536px. Responsive layout fixtures also passed the eleven viewport widths listed below. CSS parsing and ZIP integrity checks passed. PHP and JavaScript source are unchanged from 1.1.2.
 

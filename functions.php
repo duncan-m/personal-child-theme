@@ -14,6 +14,9 @@ add_action('wp_enqueue_scripts', function () {
 }, 99);
 add_filter('body_class', function ($classes) {
     $classes[] = 'dm-site';
+    if ((is_singular('post') || is_page()) && !is_front_page() && !is_page_template('templates/editorial-home.php')) {
+        $classes[] = 'dm-document';
+    }
     if (get_theme_mod('dm_footer_enabled', true)) { $classes[] = 'dm-has-contact-bar'; }
     return $classes;
 });
