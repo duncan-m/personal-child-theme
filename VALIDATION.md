@@ -1,4 +1,10 @@
-# Validation — 1.1.2
+# Validation — 1.1.3
+
+All 35 font-size declarations (including Blocksy entry-content font-size) now use the shared 0.9 scale. Headless Chromium computed-style comparisons confirmed 18 representative text elements render at exactly 90% of their 1.1.2 sizes (within 0.01px) at 320, 375, 680, 900, 1280 and 1536px. Responsive layout fixtures also passed the eleven viewport widths listed below. CSS parsing and ZIP integrity checks passed. PHP and JavaScript source are unchanged from 1.1.2.
+
+The update ZIP retains the original duncan-malcolm folder, Duncan Malcolm theme name, Blocksy parent and text domain, with Version 1.1.3. No live WordPress runtime checks were performed for this update.
+
+## Previous checks — 1.1.2
 
 Current checks: all PHP source files parsed with php-parser in PHP 7.4 mode; both JavaScript files passed node --check; CSS parsed with tinycss2; all JSON parsed; installable ZIP integrity verified.
 
