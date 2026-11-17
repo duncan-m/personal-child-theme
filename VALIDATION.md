@@ -1,4 +1,12 @@
-# Validation — 1.1.6
+# Validation — 1.1.7
+
+Chromium layout checks passed at 1536, 1280, 1024, 900, 768, 681, 680, 540, 480, 375 and 320px: the featured card takes 60% of the available columns above 680px (after the existing gap), fills the mobile column at 680px and below, preserves artwork positioning, and introduces no horizontal page overflow. PHP source parses in PHP 7.4 mode.
+
+PHP-WASM regression checks passed with WordPress API stubs reporting a featured image as present and the thumbnail renderer configured to fail if called. The card graphic still rendered and no image markup was emitted. The existing feature-selection, permissions, nonce, fallback and neighbouring-list checks also passed. These are isolated PHP tests, not a new full WordPress runtime test. CSS/JSON parsing and installable ZIP identity/integrity checks passed.
+
+No live deployment was performed. This release does not alter saved post images or theme setup settings.
+
+## Previous checks — 1.1.6
 
 Replaced the separate live search/native selector interaction with a single labelled combobox and visible title suggestions. The native controls remain a progressive fallback. Recent options and request configuration are server-rendered; the admin stylesheet/script are scoped to the setup page, with a page-slug fallback for hook detection.
 

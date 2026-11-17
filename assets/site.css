@@ -33,7 +33,7 @@ body.dm-site {background:var(--dm-ivory);color:var(--dm-navy);font-family:var(--
 .dm-section-header {display:flex;justify-content:space-between;gap:24px;align-items:baseline;margin-bottom:30px;}
 .dm-section-header h2 {font-size:calc((clamp(32px,3.5vw,46px)) * var(--dm-type-scale));margin:0;}
 .dm-all-writing {font-size:calc((16px) * var(--dm-type-scale));white-space:nowrap;}
-.dm-writing-grid {display:grid;grid-template-columns:1.06fr 1fr;gap:clamp(28px,4vw,60px);}
+.dm-writing-grid {display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:clamp(28px,4vw,60px);}
 .dm-featured {background:#f0e8df;border-radius:16px;padding:32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,38%);gap:20px;align-items:center;min-width:0;}
 .dm-featured-copy {min-width:0;}
 .dm-featured-copy > :last-child {margin-bottom:0;}
@@ -48,7 +48,6 @@ body.dm-site {background:var(--dm-ivory);color:var(--dm-navy);font-family:var(--
 .dm-card-art i {position:absolute;display:block;width:62%;height:55%;border-radius:10px;background:#c46b3e;left:0;top:29%;}
 .dm-card-art i:nth-child(2) {background:var(--dm-navy);left:34%;top:0;}
 .dm-card-art i:nth-child(3) {background:#e4d5bf;left:38%;top:45%;box-shadow:0 5px 10px #0b223310;}
-.dm-featured-image {display:block;justify-self:end;width:100%;height:auto;max-height:230px;object-fit:cover;border-radius:8px;margin:0;}
 .dm-article-list {display:flex;flex-direction:column;justify-content:space-between;gap:32px;}
 .dm-article-list article {min-width:0;}
 .dm-article-list .dm-eyebrow {margin-bottom:6px;font-size:calc((11px) * var(--dm-type-scale));}
@@ -122,7 +121,7 @@ body.dm-site {background:var(--dm-ivory);color:var(--dm-navy);font-family:var(--
 .dm-site[data-header*="type-1"] #header .ct-header-cta .ct-button:hover {background:var(--dm-orange);border-color:var(--dm-orange);}
 @media(max-width:480px) {
  .dm-featured {grid-template-columns:minmax(0,1fr);}
- .dm-card-art,.dm-featured-image {width:55%;}
+ .dm-card-art {width:55%;}
  .dm-featured h3 {font-size:calc((clamp(30px,9vw,40px)) * var(--dm-type-scale));}
  .dm-site[data-header*="type-1"] #header .site-title {font-size:calc((clamp(18px,5.5vw,24px)) * var(--dm-type-scale));}
 }

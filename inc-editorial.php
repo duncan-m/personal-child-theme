@@ -56,7 +56,7 @@ function dm_theme_editorial_render_writing($attributes) {
     <p class="dm-excerpt"><?php echo esc_html(wp_trim_words(wp_strip_all_tags(get_the_excerpt($id)), 30)); ?></p>
     <a class="dm-read" href="<?php echo esc_url(get_permalink($id)); ?>"><?php esc_html_e('Read the essay', 'dm-editorial'); ?> <span aria-hidden="true">↗</span></a>
     </div>
-    <?php if (has_post_thumbnail($id)) { echo get_the_post_thumbnail($id, 'medium_large', array('class'=>'dm-featured-image','loading'=>'lazy')); } else { ?><div class="dm-card-art" aria-hidden="true"><i></i><i></i><i></i></div><?php } ?>
+    <div class="dm-card-art" aria-hidden="true"><i></i><i></i><i></i></div>
     </article><div class="dm-article-list">
     <?php foreach ($posts as $item) : ?><article><p class="dm-eyebrow dm-muted"><?php echo esc_html(dm_theme_editorial_category($item->ID)); ?></p>
     <a class="dm-article-link" href="<?php echo esc_url(get_permalink($item)); ?>"><h3><?php echo esc_html(get_the_title($item)); ?></h3><span class="dm-arrow" aria-hidden="true">→</span></a></article><?php endforeach; ?>

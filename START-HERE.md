@@ -1,4 +1,4 @@
-# Duncan Malcolm theme — version 1.1.6
+# Duncan Malcolm theme — version 1.1.7
 
 This ZIP is the theme itself. Upload it directly through Appearance → Themes → Add New → Upload Theme. Do not extract it first. Keep the free Blocksy parent theme installed. No separate plugin is required.
 
