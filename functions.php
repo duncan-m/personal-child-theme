@@ -61,3 +61,16 @@ add_action('init', function () {
 require_once get_stylesheet_directory() . '/inc-editorial.php';
 require_once get_stylesheet_directory() . '/inc-featured.php';
 require_once get_stylesheet_directory() . '/inc-setup.php';
+
+// Suppress only Blocksy's excerpt beneath an individual post title.
+function dm_hide_post_header_excerpt($excerpt) {
+    return '';
+}
+add_action('blocksy:hero:custom_description:before', function () {
+    if (!is_admin() && is_singular('post')) {
+        add_filter('get_the_excerpt', 'dm_hide_post_header_excerpt', PHP_INT_MAX);
+    }
+});
+add_action('blocksy:hero:custom_description:after', function () {
+    remove_filter('get_the_excerpt', 'dm_hide_post_header_excerpt', PHP_INT_MAX);
+});

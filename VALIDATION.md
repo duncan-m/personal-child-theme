@@ -1,4 +1,12 @@
-# Validation — 1.1.7
+# Validation — 1.1.8
+
+Confirmed the live featured post renders its saved excerpt in Blocksy’s page-description element beneath the title. The fix temporarily suppresses the excerpt API only while Blocksy renders a single-post hero description, then removes the filter. It does not alter post content, saved excerpts or settings.
+
+Real WordPress 7.1.4/Blocksy with SQLite under PHP-WASM 8.3.33 verified the parent title area includes the excerpt before suppression and omits both description markup and text with the fix. The title remains, the saved excerpt and normal excerpt API remain intact after title rendering, the homepage featured card still includes the excerpt, and page rendering does not suppress post excerpts. PHP 7.4 syntax parsing and JSON/ZIP identity/integrity checks passed.
+
+No live deployment was performed. No setup reapplication is required.
+
+## Previous checks — 1.1.7
 
 Chromium layout checks passed at 1536, 1280, 1024, 900, 768, 681, 680, 540, 480, 375 and 320px: the featured card takes 60% of the available columns above 680px (after the existing gap), fills the mobile column at 680px and below, preserves artwork positioning, and introduces no horizontal page overflow. PHP source parses in PHP 7.4 mode.
 

@@ -4,17 +4,21 @@ A WordPress child theme for [Blocksy](https://wordpress.org/themes/blocksy/), wi
 
 ## Installation
 
-[Download duncan-malcolm-theme-v1.1.7.zip](https://github.com/duncan-m/personal-child-theme/raw/refs/heads/main/downloads/duncan-malcolm-theme-v1.1.7.zip)
+[Download duncan-malcolm-theme-v1.1.8.zip](https://github.com/duncan-m/personal-child-theme/raw/refs/heads/main/downloads/duncan-malcolm-theme-v1.1.8.zip)
 
 Use this packaged ZIP for WordPress uploads. GitHub's **Code → Download ZIP** adds a repository-based folder name, which WordPress treats as a different theme.
 
-The package preserves the original identity: folder `duncan-malcolm`, theme name `Duncan Malcolm`, parent `blocksy`, and text domain `duncan-malcolm`. Version 1.1.7 replaces the original 1.1.0 theme. During upload, choose **Replace current with uploaded** when WordPress offers it.
+The package preserves the original identity: folder `duncan-malcolm`, theme name `Duncan Malcolm`, parent `blocksy`, and text domain `duncan-malcolm`. Version 1.1.8 replaces the original 1.1.0 theme. During upload, choose **Replace current with uploaded** when WordPress offers it.
 
 1. Install the free Blocksy parent theme.
 2. Upload the packaged `duncan-malcolm` theme ZIP via **Appearance → Themes → Add New → Upload Theme**, then activate it. For a Git checkout, place this repository in `wp-content/themes/duncan-malcolm`.
 3. Follow [START-HERE.md](START-HERE.md). The optional **Appearance → Duncan Malcolm Setup** action creates starter content and changes site settings when you apply it.
 
 Requires WordPress 6.6+ and PHP 7.4+. Review [VALIDATION.md](VALIDATION.md) for testing scope and staging checks.
+
+## Version 1.1.8
+
+Individual posts no longer show the automatic excerpt under their title. The saved excerpt and homepage featured-card description remain available. This change is scoped to Blocksy’s single-post title description and does not edit post content or settings. No setup reapplication is required.
 
 ## Version 1.1.7
 
@@ -72,7 +76,7 @@ Existing mobile overrides are preserved. The editor imports the same stylesheet.
 From the repository root:
 
 ```sh
-git archive --format=zip --prefix=duncan-malcolm/ --output=duncan-malcolm-theme-v1.1.7.zip HEAD -- assets blocks patterns templates functions.php inc-editorial.php inc-featured.php inc-setup.php style.css theme.json LICENSE.txt README.md START-HERE.md VALIDATION.md validation-results.json
+git archive --format=zip --prefix=duncan-malcolm/ --output=duncan-malcolm-theme-v1.1.8.zip HEAD -- assets blocks patterns templates functions.php inc-editorial.php inc-featured.php inc-setup.php style.css theme.json LICENSE.txt README.md START-HERE.md VALIDATION.md validation-results.json
 ```
 
 Theme source files live at the repository root. No build step or companion plugin is required.
