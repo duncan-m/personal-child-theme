@@ -1,4 +1,4 @@
-# Duncan Malcolm theme — version 1.1.8
+# Duncan Malcolm theme — version 1.1.9
 
 This ZIP is the theme itself. Upload it directly through Appearance → Themes → Add New → Upload Theme. Do not extract it first. Keep the free Blocksy parent theme installed. No separate plugin is required.
 
@@ -33,3 +33,7 @@ CSS tokens and layout rules are in assets/site.css. The editor shares those styl
 Use the navy contact bar checkbox in the Customiser to restore Blocksy’s standard footer. The custom bar reserves space for its measured height and becomes compact on mobile. No newsletter signup or hero action buttons are included.
 
 Read VALIDATION.md before launch. Review the result on staging with your real images and content. This theme ZIP now includes the setup code and optional starter content; the resulting WordPress database and media uploads still belong to your site and need normal backups.
+
+## Creating and migrating article layouts
+
+Read [POST-AUTHORING.md](POST-AUTHORING.md) for the generation prompt and component class reference. Shared article presentation lives in assets/article.css. New post bodies use a dm-post wrapper and contain no embedded CSS. The examples directory includes a component gallery and the supplied card-payments article with only its style block removed. Install this version before removing that block from your existing post. Gutenberg is not required; use your editor’s HTML/Text mode and preview before publishing. This update does not rewrite saved WordPress content.

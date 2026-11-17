@@ -1,0 +1,113 @@
+<div class="dm-post">
+  <p class="dm-lead">Example components for payments, finance and technology articles. All figures below are illustrative, not benchmarks or advice.</p>
+  <aside class="dm-takeaway" aria-label="Key takeaway">
+    <span class="dm-kicker">Key takeaway</span>
+    <p>Compare conversion, costs and losses using the same population and reporting period.</p>
+  </aside>
+
+  <h2>Metrics with context</h2>
+  <dl class="dm-metrics">
+    <div><dt>Approval rate</dt><dd>94.2%</dd><small>Illustrative · authorised attempts ÷ submitted attempts · June 2026</small></div>
+    <div><dt>Processing cost</dt><dd>£12,000</dd><small>Illustrative · GBP · June 2026 · excludes dispute losses</small></div>
+    <div><dt>Dispute rate</dt><dd>0.40%</dd><small>Illustrative · disputed transactions ÷ settled transactions · mature cohort</small></div>
+  </dl>
+
+  <h2>A financial table</h2>
+  <p class="dm-scroll-hint">On narrow screens, scroll the table horizontally if needed.</p>
+  <div class="dm-table-scroll" role="region" tabindex="0" aria-label="Illustrative payment economics table">
+    <table class="dm-financial-table dm-table-wide">
+      <caption>Illustrative payment economics — GBP, June 2026</caption>
+      <thead><tr><th scope="col">Item</th><th scope="col" class="dm-number">Amount</th><th scope="col">Basis</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Gross sales</th><td class="dm-number">£500,000</td><td>Completed sales in the period</td></tr>
+        <tr><th scope="row">Refunds</th><td class="dm-number">(£20,000)</td><td>Illustrative deduction</td></tr>
+        <tr><th scope="row">Processing fees</th><td class="dm-number">(£12,000)</td><td>Illustrative deduction</td></tr>
+        <tr><th scope="row">Dispute losses</th><td class="dm-number">(£3,000)</td><td>Illustrative deduction</td></tr>
+      </tbody>
+      <tfoot><tr><th scope="row">Retained amount</th><td class="dm-number">£465,000</td><td>Before other operating costs and tax</td></tr></tfoot>
+    </table>
+  </div>
+  <aside class="dm-note"><p><strong>Assumptions:</strong> This is a simplified teaching example. Define recognition timing and avoid double-counting refunds and disputes in real reporting.</p></aside>
+
+  <h2>A worked calculation</h2>
+  <div class="dm-formula" aria-label="Illustrative processing fee calculation">
+    <p><strong>Fee = payment value × percentage fee + fixed fee</strong></p>
+    <p>£100 × 1.5% + £0.20 = £1.70</p>
+    <p>Assumes a single successful £100 payment, no additional fees and illustrative pricing.</p>
+  </div>
+
+  <h2>A comparison</h2>
+  <dl class="dm-comparison">
+    <div><dt>Authorisation</dt><dd>The issuer approves or declines the request. Approval is distinct from settlement.</dd></div>
+    <div><dt>Settlement</dt><dd>Funds move according to the payment arrangement and applicable timing.</dd></div>
+  </dl>
+  <dl class="dm-definitions">
+    <div><dt>Idempotency</dt><dd>Repeated requests with the same key should not create duplicate operations within the provider’s documented behaviour.</dd></div>
+    <div><dt>Reporting cohort</dt><dd>A defined group of transactions observed over the same period.<strong>Record the date range, population and maturity.</strong></dd></div>
+  </dl>
+
+  <h2>A simple process figure</h2>
+  <figure class="dm-figure" aria-labelledby="example-flow-title">
+    <p class="dm-kicker">Illustrative process</p>
+    <p class="dm-figure-title" id="example-flow-title">A payment request</p>
+    <ol class="dm-flow" aria-label="Simplified request flow">
+      <li><span>Customer</span></li><li><span>Merchant</span></li><li><span>Payment provider</span></li><li><span>Issuer</span></li>
+    </ol>
+    <figcaption>Simplified request sequence. Arrows indicate sequence, not movement of funds. Acquirer and network details are omitted.</figcaption>
+  </figure>
+
+  <h2>A risk matrix</h2>
+  <figure class="dm-figure" aria-labelledby="example-risk-title">
+    <p class="dm-figure-title" id="example-risk-title">Illustrative relative exposure</p>
+    <p class="dm-figure-intro">Labels express a hypothesis, not calibrated probabilities.</p>
+    <p class="dm-scroll-hint">Scroll horizontally to compare all columns on narrow screens.</p>
+    <div class="dm-table-scroll" role="region" tabindex="0" aria-label="Illustrative exposure matrix">
+      <table class="dm-matrix">
+        <caption>Customer groups versus transaction maturity</caption>
+        <thead><tr><th scope="col">Customer group</th><th scope="col">Recent transactions</th><th scope="col">Older transactions</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">New customers</th><td class="dm-risk-6">Higher exposure</td><td class="dm-risk-3">Medium exposure</td></tr>
+          <tr><th scope="row">Established customers</th><td class="dm-risk-3">Medium exposure</td><td class="dm-risk-1">Lower exposure</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dm-matrix-key" aria-hidden="true"><span>Lower risk</span><span class="dm-spectrum"></span><span>Higher risk</span></div>
+    <figcaption>Illustrative only. Define and validate your own groups, periods and observed outcomes before using a matrix operationally.</figcaption>
+  </figure>
+
+  <h2>A conceptual portfolio graphic</h2>
+  <figure class="dm-figure" aria-label="Conceptual mix of payment risk">
+    <p class="dm-figure-title">A portfolio contains different exposures</p>
+    <div class="dm-portfolio-grid" aria-hidden="true">
+      <span class="dm-tile">L</span><span class="dm-tile">L</span><span class="dm-tile dm-tile-medium">M</span><span class="dm-tile">L</span><span class="dm-tile dm-tile-high">H</span><span class="dm-tile">L</span><span class="dm-tile">L</span><span class="dm-tile dm-tile-medium">M</span><span class="dm-tile">L</span><span class="dm-tile">L</span><span class="dm-tile">L</span><span class="dm-tile">L</span><span class="dm-tile dm-tile-medium">M</span><span class="dm-tile">L</span><span class="dm-tile">L</span><span class="dm-tile dm-tile-high">H</span><span class="dm-tile">L</span><span class="dm-tile">L</span><span class="dm-tile">L</span><span class="dm-tile">L</span>
+    </div>
+    <div class="dm-risk-key"><span><b>L</b> Lower</span><span><b class="dm-key-medium">M</b> Medium</span><span><b class="dm-key-high">H</b> Higher</span></div>
+    <figcaption>Decorative illustration of a mix. Tile proportions are arbitrary and do not represent observed data.</figcaption>
+  </figure>
+
+  <h2>Implementation steps</h2>
+  <ol class="dm-steps">
+    <li><h3>Define the measure</h3><p>Agree the numerator, denominator, period and exclusions.</p><div class="dm-action"><strong>Start here</strong>Write down the calculation before collecting data.</div></li>
+    <li><h3>Check the result</h3><p>Reconcile totals and compare cohorts at the same maturity.</p></li>
+  </ol>
+  <aside class="dm-prompt" aria-label="Review checklist">
+    <span class="dm-kicker">Before publishing</span>
+    <h3>Check the evidence</h3>
+    <ul class="dm-checklist"><li>Are the units and time period explicit?</li><li>Are examples labelled as illustrative?</li><li>Can readers find the underlying source?</li></ul>
+  </aside>
+
+  <h2>A technical example</h2>
+  <p>Use escaped text inside code blocks. This JSON is an illustrative payload, not a provider API contract.</p>
+  <pre tabindex="0" aria-label="Illustrative JSON payload"><code>{
+  "amount_minor": 10000,
+  "currency": "GBP",
+  "idempotency_key": "example-order-123"
+}</code></pre>
+  <p>Keep credentials and customer data out of published examples.</p>
+
+  <p class="dm-close">Make the calculation and its assumptions as clear as the conclusion.</p>
+  <div class="dm-sources" aria-label="Sources and further reading">
+    <p><strong>Sources and further reading</strong></p>
+    <p>Add verified sources here. The numerical examples in this component gallery are invented for demonstration.</p>
+  </div>
+</div>

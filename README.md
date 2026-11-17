@@ -4,17 +4,29 @@ A WordPress child theme for [Blocksy](https://wordpress.org/themes/blocksy/), wi
 
 ## Installation
 
-[Download duncan-malcolm-theme-v1.1.8.zip](https://github.com/duncan-m/personal-child-theme/raw/refs/heads/main/downloads/duncan-malcolm-theme-v1.1.8.zip)
+[Download duncan-malcolm-theme-v1.1.9.zip](https://github.com/duncan-m/personal-child-theme/raw/refs/heads/main/downloads/duncan-malcolm-theme-v1.1.9.zip)
 
 Use this packaged ZIP for WordPress uploads. GitHub's **Code → Download ZIP** adds a repository-based folder name, which WordPress treats as a different theme.
 
-The package preserves the original identity: folder `duncan-malcolm`, theme name `Duncan Malcolm`, parent `blocksy`, and text domain `duncan-malcolm`. Version 1.1.8 replaces the original 1.1.0 theme. During upload, choose **Replace current with uploaded** when WordPress offers it.
+The package preserves the original identity: folder `duncan-malcolm`, theme name `Duncan Malcolm`, parent `blocksy`, and text domain `duncan-malcolm`. Version 1.1.9 replaces the original 1.1.0 theme. During upload, choose **Replace current with uploaded** when WordPress offers it.
 
 1. Install the free Blocksy parent theme.
 2. Upload the packaged `duncan-malcolm` theme ZIP via **Appearance → Themes → Add New → Upload Theme**, then activate it. For a Git checkout, place this repository in `wp-content/themes/duncan-malcolm`.
 3. Follow [START-HERE.md](START-HERE.md). The optional **Appearance → Duncan Malcolm Setup** action creates starter content and changes site settings when you apply it.
 
 Requires WordPress 6.6+ and PHP 7.4+. Review [VALIDATION.md](VALIDATION.md) for testing scope and staging checks.
+
+## Version 1.1.9
+
+Reusable article styles now live in `assets/article.css`: standard and financial tables, scroll wrappers, callouts, figures, comparisons, definitions, numbered actions, checklists, sources, the supplied portfolio graphic and risk matrix, metric summaries, worked calculations, simple sequences and code. Existing `dm-payment-post` / `pp-*` markup remains supported; new articles use `dm-post` / `dm-*`. Shared typography follows the 0.9 scale, with a readable floor for small labels. Singular pages load the stylesheet after the site styles; editor styles import it too.
+
+- [Post authoring guide and generation prompt](POST-AUTHORING.md)
+- [Copyable component gallery](examples/article-components.html)
+- [Supplied card-payments article without embedded CSS](examples/card-payments-post.html)
+
+Install the update before removing the existing post’s `<style>` block. The supplied CSS-free copy preserves its wording/data; the theme does not rewrite the WordPress database. No setup reapplication is required.
+
+Homepage headline caps are now 42px for the featured card and 28px for adjacent article links, both using the existing type scale and mobile overrides.
 
 ## Version 1.1.8
 
@@ -76,7 +88,7 @@ Existing mobile overrides are preserved. The editor imports the same stylesheet.
 From the repository root:
 
 ```sh
-git archive --format=zip --prefix=duncan-malcolm/ --output=duncan-malcolm-theme-v1.1.8.zip HEAD -- assets blocks patterns templates functions.php inc-editorial.php inc-featured.php inc-setup.php style.css theme.json LICENSE.txt README.md START-HERE.md VALIDATION.md validation-results.json
+git archive --format=zip --prefix=duncan-malcolm/ --output=duncan-malcolm-theme-v1.1.9.zip HEAD -- assets blocks patterns templates examples functions.php inc-editorial.php inc-featured.php inc-setup.php style.css theme.json LICENSE.txt README.md POST-AUTHORING.md START-HERE.md VALIDATION.md validation-results.json
 ```
 
 Theme source files live at the repository root. No build step or companion plugin is required.

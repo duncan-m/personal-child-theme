@@ -9,6 +9,9 @@ add_action('after_setup_theme', function () {
 add_action('wp_enqueue_scripts', function () {
     $file = get_stylesheet_directory() . '/assets/site.css';
     wp_enqueue_style('dm-site', get_stylesheet_directory_uri() . '/assets/site.css', array(), filemtime($file));
+    if (is_singular()) {
+        wp_enqueue_style('dm-article', get_stylesheet_directory_uri() . '/assets/article.css', array('dm-site'), filemtime(get_stylesheet_directory() . '/assets/article.css'));
+    }
     $js = get_stylesheet_directory() . '/assets/site.js';
     wp_enqueue_script('dm-site', get_stylesheet_directory_uri() . '/assets/site.js', array(), filemtime($js), true);
 }, 99);

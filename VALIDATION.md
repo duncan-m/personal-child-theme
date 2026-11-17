@@ -1,4 +1,14 @@
-# Validation — 1.1.8
+# Validation — 1.1.9
+
+Added assets/article.css and a singular-page enqueue dependency on dm-site, plus editor imports. Extracted reusable styles from the supplied card-payments post, mapped colours to shared tokens and added canonical dm-* names with pp-* aliases. Standard table defaults, numeric alignment, totals, figures, callouts, comparisons, definitions, steps, sources, metrics, formulas, simple flows, code and print handling are included. Normal typography retains the shared scale; small figure labels have a 12px floor. Homepage headline caps are 42px and 28px before the 0.9 scale; existing mobile overrides remain.
+
+Headless Chromium checked the supplied article with its embedded CSS removed, an equivalent canonical-class version, and the new component gallery at 1536, 1280, 900, 680, 520, 375 and 320px. Checks covered no page overflow, 16.2px article body text, dark-callout contrast, matching canonical/legacy computed geometry and matrix styling, numeric alignment/tabular figures, captions, keyboard-focusable scrolling, ordinary table defaults and print navigation/overflow. Desktop/mobile screenshots were inspected. Separate editor checks verified serif headings, shared body typography and the financial total border. Homepage heading caps compute to 37.8px and 25.2px at a large desktop viewport.
+
+Real WordPress 7.1.4 with Blocksy/SQLite under PHP-WASM 8.3.33 verified singular-post style enqueueing, the dm-site dependency, file existence and modification-time version, preserved CSS-free legacy/new markup through the_content, editor imports and original theme identity. PHP 7.4 syntax and all CSS/JSON parsing passed. The migration copy was compared with the uploaded source: only the opening style block is removed. Both example fragments contain no inline styles or scripts. ZIP identity/integrity was verified.
+
+The authoring guide includes supported classes, accessible table conventions, a generation prompt, source/data requirements and Classic Editor/WPBakery instructions. No saved WordPress content was rewritten and no live deployment was performed. Install this update before removing the embedded stylesheet from the existing post; no setup reapplication is required.
+
+## Previous checks — 1.1.8
 
 Confirmed the live featured post renders its saved excerpt in Blocksy’s page-description element beneath the title. The fix temporarily suppresses the excerpt API only while Blocksy renders a single-post hero description, then removes the filter. It does not alter post content, saved excerpts or settings.
 
