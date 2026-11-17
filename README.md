@@ -10,6 +10,12 @@ A WordPress child theme for [Blocksy](https://wordpress.org/themes/blocksy/), wi
 
 Requires WordPress 6.6+ and PHP 7.4+. Review [VALIDATION.md](VALIDATION.md) for testing scope and staging checks.
 
+## Version 1.1.2
+
+Featured essay artwork now sits to the right of the copy, including uploaded featured images. On phones up to 480px wide it stacks beneath the copy. The Blocksy header matches the reference with an uppercase serif title, right-aligned navigation, navy contact button and inset divider.
+
+For an existing site, the CSS applies on update. If your header has a different builder layout, use **Appearance → Duncan Malcolm Setup → Reapply layout and links** with your contact URL to restore the reference arrangement. Reapplying also resets starter menu/header customisations. The contact button needs a contact URL. Mobile keeps Blocksy’s menu trigger.
+
 ## Version 1.1.1
 
 Merged the supplied CSS into `assets/site.css`:
@@ -26,7 +32,7 @@ Existing mobile overrides are preserved. The editor imports the same stylesheet.
 From the repository root:
 
 ```sh
-git archive --format=zip --prefix=duncan-malcolm/ --output=duncan-malcolm-theme-v1.1.1.zip HEAD
+git archive --format=zip --prefix=duncan-malcolm/ --output=duncan-malcolm-theme-v1.1.2.zip HEAD
 ```
 
 Theme source files live at the repository root. No build step or companion plugin is required.

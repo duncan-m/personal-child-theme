@@ -1,4 +1,12 @@
-# Validation — 1.1.1
+# Validation — 1.1.2
+
+Current checks: all PHP source files parsed with php-parser in PHP 7.4 mode; both JavaScript files passed node --check; CSS parsed with tinycss2; all JSON parsed; installable ZIP integrity verified.
+
+Headless Chromium layout fixtures using the downloaded Blocksy parent stylesheet passed at 1536, 1280, 1024, 900, 768, 681, 680, 540, 480, 375 and 320px. Checks covered right-hand artwork above 480px, stacked artwork on narrow phones, no page overflow, header height and title bounds. An uploaded featured image was also checked in the right-hand column. Desktop/mobile fixture screenshots were inspected. These fixtures use representative markup, not a running WordPress site.
+
+A live WordPress/Blocksy staging check remains required for header builder configuration, menu interaction, the editor, custom logos, actual content and contact destinations. No WordPress runtime checks were rerun for 1.1.2. validation-results.json remains the supplied historical 1.1.0 results.
+
+## Previous checks — 1.1.1
 
 This update applies the supplied CSS to assets/site.css and bumps the theme version. The stylesheet is byte-for-byte identical to the supplied CSS. Compared with 1.1.0, only four spacing declarations change; mobile overrides are preserved. PHP and JavaScript source files are unchanged.
 

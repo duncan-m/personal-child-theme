@@ -105,6 +105,7 @@ function dm_apply_starter($site_name, $contact, $linkedin, $include_demo) {
         'desktop'=>array('middle-row'=>array('start'=>array('logo'),'end'=>$end)),
         'mobile'=>array('middle-row'=>array('start'=>array('logo'),'end'=>array('trigger')),'offcanvas'=>array('start'=>array('mobile-menu')))
     )));
+    $section['items'][] = array('id'=>'logo','values'=>array('has_site_title'=>'yes','has_tagline'=>'no'));
     $section['items'][] = array('id'=>'button','values'=>array('header_button_text'=>'Get in touch ↗','header_button_link'=>$contact));
     set_theme_mod('header_placements',array('current_section'=>'type-1','sections'=>array($section)));
     update_option('dm_setup_applied',1);

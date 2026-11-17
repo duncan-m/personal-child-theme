@@ -47,11 +47,13 @@ function dm_theme_editorial_render_writing($attributes) {
     <?php if ($archive) : ?><a class="dm-all-writing" href="<?php echo esc_url($archive); ?>"><?php esc_html_e('View all writing', 'dm-editorial'); ?> <span aria-hidden="true">↗</span></a><?php endif; ?></header>
     <?php if ($featured) : $id = $featured->ID; ?>
     <div class="dm-writing-grid"><article class="dm-featured">
+    <div class="dm-featured-copy">
     <p class="dm-eyebrow dm-muted"><?php echo esc_html('FEATURED ESSAY · ' . dm_theme_editorial_category($id)); ?></p>
     <h3><a href="<?php echo esc_url(get_permalink($id)); ?>"><?php echo esc_html(get_the_title($id)); ?></a></h3>
     <?php $subtitle = get_post_meta($id, '_dm_subtitle', true); if ($subtitle) : ?><p class="dm-subtitle"><?php echo esc_html($subtitle); ?></p><?php endif; ?>
     <p class="dm-excerpt"><?php echo esc_html(wp_trim_words(wp_strip_all_tags(get_the_excerpt($id)), 30)); ?></p>
     <a class="dm-read" href="<?php echo esc_url(get_permalink($id)); ?>"><?php esc_html_e('Read the essay', 'dm-editorial'); ?> <span aria-hidden="true">↗</span></a>
+    </div>
     <?php if (has_post_thumbnail($id)) { echo get_the_post_thumbnail($id, 'medium_large', array('class'=>'dm-featured-image','loading'=>'lazy')); } else { ?><div class="dm-card-art" aria-hidden="true"><i></i><i></i><i></i></div><?php } ?>
     </article><div class="dm-article-list">
     <?php foreach ($posts as $item) : ?><article><p class="dm-eyebrow dm-muted"><?php echo esc_html(dm_theme_editorial_category($item->ID)); ?></p>
