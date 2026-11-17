@@ -30,6 +30,8 @@ function dm_theme_editorial_render_writing($attributes) {
     $excluded = dm_theme_editorial_interview_ids();
     $args = array('post_type'=>'post','post_status'=>'publish','posts_per_page'=>1,'ignore_sticky_posts'=>true,'no_found_rows'=>true,'category__not_in'=>$excluded);
     $selected = !empty($attributes['featuredId']) ? absint($attributes['featuredId']) : 0;
+    $homepage_selection = get_theme_mod('dm_featured_post_id', null);
+    if (is_front_page() && $homepage_selection !== null) { $selected = absint($homepage_selection); }
     $featured = null;
     if ($selected) {
         $candidate = get_post($selected);

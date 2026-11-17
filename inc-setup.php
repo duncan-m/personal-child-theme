@@ -20,6 +20,7 @@ function dm_setup_screen() {
     if (!current_user_can('manage_options')) { return; }
     $ids = (array) get_option('dm_setup_pages', array()); ?>
     <div class="wrap"><h1>Duncan Malcolm — Site Setup</h1>
+    <?php dm_featured_screen(); ?>
     <p>Everything is built into this child theme. The Blocksy parent must remain installed; no companion plugin, Pro licence or page builder is needed.</p>
     <?php if (get_option('dm_setup_applied')) : ?><div class="notice notice-success inline"><p>Starter setup applied. Your homepage, menus, styling and contact bar are configured.</p></div><?php endif; ?>
     <p><strong>Apply starter setup</strong> creates new published Home, Writing and About pages, sets Home as the front page, configures the header/navigation and applies the reference styling. Existing content is not overwritten. Reading settings, site title and header/menu configuration are backed up for the Restore button.</p>
@@ -31,7 +32,7 @@ function dm_setup_screen() {
     <p><label><input type="checkbox" name="include_demo" value="1" <?php checked(!get_option('dm_setup_applied')); ?>> Include the six example essays/interviews from the mockup (published starter content; replace before launch).</label></p>
     <?php submit_button(get_option('dm_setup_applied') ? 'Reapply layout and links' : 'Apply starter setup'); ?></form>
     <?php if (!empty($ids['home'])) : ?><p><a class="button button-primary" href="<?php echo esc_url(get_edit_post_link($ids['home'])); ?>">Edit homepage and replace images</a> <a class="button" href="<?php echo esc_url(get_permalink($ids['home'])); ?>">View homepage</a></p><?php endif; ?>
-    <h2>Finish your content</h2><ol><li>Edit the homepage to replace the portrait and the four company-name placeholders with your original images.</li><li>Replace example post bodies and About copy. The Writing block’s sidebar lets you select a featured essay.</li><li>Contact links can also be changed in Appearance → Customise → Duncan Malcolm.</li><li>Review the site on mobile and desktop before launching.</li></ol>
+    <h2>Finish your content</h2><ol><li>Edit the homepage to replace the portrait and the four company-name placeholders with your original images.</li><li>Replace example post bodies and About copy. Use Featured homepage essay above to choose a post, even with Gutenberg disabled.</li><li>Contact links can also be changed in Appearance → Customise → Duncan Malcolm.</li><li>Review the site on mobile and desktop before launching.</li></ol>
     <p>Reapplying setup reuses its recorded pages and example posts; it does not reset their edited content. It reapplies the header and navigation. Switching themes disables these built-in dynamic blocks; your posts remain in WordPress.</p>
     <?php if (get_option('dm_setup_backup')) : ?><h2>Restore previous configuration</h2><p>Restores the Reading, site-title, header/menu and theme settings saved before the first setup. It does not delete created pages or example posts.</p><form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>"><input type="hidden" name="action" value="dm_restore_setup"><?php wp_nonce_field('dm_restore_setup'); submit_button('Restore previous settings', 'secondary'); ?></form><?php endif; ?>
     </div><?php

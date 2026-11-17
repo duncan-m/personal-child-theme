@@ -1,4 +1,14 @@
-# Validation — 1.1.4
+# Validation — 1.1.5
+
+The new selector is separate from the existing starter-setup form. It stores a theme setting and applies it only to homepage writing-block rendering. Both search and save require administrator permissions and valid nonces. Search queries target published post titles, exclude interviews and descendant categories, order by publication date/ID, and return at most 20 choices.
+
+PHP 8.3.33 via PHP-WASM with stubbed WordPress APIs passed 28 behaviour checks: recent results, older-title search, decoded titles, eligible/ineligible selections, save permissions and nonces, safe rejection without losing the prior choice, homepage override, non-homepage preservation, adjacent-list exclusion, saved older selection, fallback after unpublishing, automatic mode and restoring the existing block setting. These are isolated tests, not a full WordPress database/runtime test.
+
+Headless Chromium checks exercised the PHP-rendered form with mocked AJAX responses: older-title results, retaining unsaved choices, no matches, network failure, text-only title rendering, stale-response protection, clearing search to recent posts, preserving Automatic mode, and no writes during search. The form passed overflow checks at 1280, 375 and 320px, with no browser JavaScript errors. New JavaScript syntax and PHP 7.4 parser checks passed. JSON and installable ZIP identity/integrity checks passed.
+
+No live site changes or full WordPress admin workflow tests were performed. Install the update and use Save featured essay; do not reapply starter setup for this feature.
+
+## Previous checks — 1.1.4
 
 Fetched the live HTML and stylesheets for the About page and payment-fraud post supplied by the user. The child stylesheet was loading, but standard page/post title sizes and palette inherited Blocksy defaults. This release adds dm-document for standard singular posts/pages (excluding the front page and Editorial Homepage template), scoped reading-layout styles and body-level palette tokens.
 

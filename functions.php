@@ -59,4 +59,5 @@ add_action('init', function () {
     ));
 });
 require_once get_stylesheet_directory() . '/inc-editorial.php';
+require_once get_stylesheet_directory() . '/inc-featured.php';
 require_once get_stylesheet_directory() . '/inc-setup.php';

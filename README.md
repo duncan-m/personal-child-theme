@@ -4,17 +4,29 @@ A WordPress child theme for [Blocksy](https://wordpress.org/themes/blocksy/), wi
 
 ## Installation
 
-[Download duncan-malcolm-theme-v1.1.4.zip](https://github.com/duncan-m/personal-child-theme/raw/refs/heads/main/downloads/duncan-malcolm-theme-v1.1.4.zip)
+[Download duncan-malcolm-theme-v1.1.5.zip](https://github.com/duncan-m/personal-child-theme/raw/refs/heads/main/downloads/duncan-malcolm-theme-v1.1.5.zip)
 
 Use this packaged ZIP for WordPress uploads. GitHub's **Code → Download ZIP** adds a repository-based folder name, which WordPress treats as a different theme.
 
-The package preserves the original identity: folder `duncan-malcolm`, theme name `Duncan Malcolm`, parent `blocksy`, and text domain `duncan-malcolm`. Version 1.1.4 replaces the original 1.1.0 theme. During upload, choose **Replace current with uploaded** when WordPress offers it.
+The package preserves the original identity: folder `duncan-malcolm`, theme name `Duncan Malcolm`, parent `blocksy`, and text domain `duncan-malcolm`. Version 1.1.5 replaces the original 1.1.0 theme. During upload, choose **Replace current with uploaded** when WordPress offers it.
 
 1. Install the free Blocksy parent theme.
 2. Upload the packaged `duncan-malcolm` theme ZIP via **Appearance → Themes → Add New → Upload Theme**, then activate it. For a Git checkout, place this repository in `wp-content/themes/duncan-malcolm`.
 3. Follow [START-HERE.md](START-HERE.md). The optional **Appearance → Duncan Malcolm Setup** action creates starter content and changes site settings when you apply it.
 
 Requires WordPress 6.6+ and PHP 7.4+. Review [VALIDATION.md](VALIDATION.md) for testing scope and staging checks.
+
+## Version 1.1.5
+
+Set the featured homepage essay without Gutenberg:
+
+1. Open **Appearance → Duncan Malcolm Setup**.
+2. Under **Featured homepage essay**, browse the 20 most recent published writing posts or type into **Search post titles** to find older posts.
+3. Choose the title and click **Save featured essay**.
+
+Results include publication dates. Search is limited to titles and returns up to 20 eligible posts; refine the title if needed. Interviews (including descendant categories), drafts and pages are excluded. The selected post remains available when outside the latest results. Searching alone does not save anything; failed searches retain your choice. A Search button also works without JavaScript.
+
+The setting overrides the writing block’s featured selection on the homepage only. **Automatic** uses the latest published writing post. **Keep existing homepage block setting** restores the original block setting. If the selected essay becomes ineligible, the homepage falls back to the latest writing post. Saving leaves homepage content, menus and other site settings intact. No setup reapplication is needed.
 
 ## Version 1.1.4
 
@@ -46,7 +58,7 @@ Existing mobile overrides are preserved. The editor imports the same stylesheet.
 From the repository root:
 
 ```sh
-git archive --format=zip --prefix=duncan-malcolm/ --output=duncan-malcolm-theme-v1.1.4.zip HEAD -- assets blocks patterns templates functions.php inc-editorial.php inc-setup.php style.css theme.json LICENSE.txt README.md START-HERE.md VALIDATION.md validation-results.json
+git archive --format=zip --prefix=duncan-malcolm/ --output=duncan-malcolm-theme-v1.1.5.zip HEAD -- assets blocks patterns templates functions.php inc-editorial.php inc-featured.php inc-setup.php style.css theme.json LICENSE.txt README.md START-HERE.md VALIDATION.md validation-results.json
 ```
 
 Theme source files live at the repository root. No build step or companion plugin is required.
