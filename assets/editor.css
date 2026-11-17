@@ -1,0 +1,5 @@
+@import url('site.css');
+.editor-styles-wrapper {background:var(--dm-ivory);color:var(--dm-navy);font-family:var(--dm-sans);}
+.editor-styles-wrapper .wp-block {max-width:1200px;}
+.editor-styles-wrapper .dm-hero {width:100%;}
+.editor-styles-wrapper .dm-logo-grid {display:grid;}

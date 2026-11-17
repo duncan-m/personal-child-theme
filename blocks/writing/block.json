@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "dm/writing",
+  "version": "1.0.0",
+  "title": "Writing & ideas",
+  "category": "widgets",
+  "icon": "media-document",
+  "description": "Live editorial content from your published posts.",
+  "textdomain": "dm-editorial",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Writing & ideas"
+    },
+    "featuredId": {
+      "type": "number",
+      "default": 0
+    },
+    "archiveUrl": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false,
+    "multiple": false
+  }
+}

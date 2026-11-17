@@ -1,0 +1,41 @@
+{
+  "setup": {
+    "three starter pages": true,
+    "six example posts": true,
+    "front page assigned": true,
+    "writing archive assigned": true,
+    "desktop and mobile menu assigned": true,
+    "reapply does not duplicate pages": true,
+    "reapply preserves homepage edits": true,
+    "reapply preserves About edits": true,
+    "reapply does not duplicate examples": true,
+    "restore show_on_front": true,
+    "restore page_on_front": true,
+    "restore page_for_posts": true,
+    "restore blogname": true
+  },
+  "runtime": {
+    "php": "8.3.36",
+    "wordpress": "7.1.4",
+    "blocksy": "2.1.62",
+    "checks": {
+      "featured included": true,
+      "three other writing posts": true,
+      "interviews excluded from writing": true,
+      "selected interview falls back to eligible writing": true,
+      "two interviews": true,
+      "draft feature not shown": true,
+      "homepage pattern parsed": true,
+      "writing block registered": true,
+      "interview block registered": true,
+      "parent footer suppressed": true,
+      "parent footer restored when disabled": true,
+      "subtitle output escaped": true,
+      "all package PHP files parse": true,
+      "homepage single h1": true,
+      "contact bar rendered": true,
+      "header contact button rendered": true,
+      "hero rendered": true
+    }
+  }
+}

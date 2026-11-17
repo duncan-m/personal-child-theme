@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "dm/interviews",
+  "version": "1.0.0",
+  "title": "Interview archive",
+  "category": "widgets",
+  "icon": "format-chat",
+  "description": "Live editorial content from your published posts.",
+  "textdomain": "dm-editorial",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Conversations worth revisiting."
+    }
+  },
+  "supports": {
+    "html": false,
+    "multiple": false
+  }
+}

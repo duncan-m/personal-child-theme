@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "settings": {
+    "layout": {
+      "contentSize": "760px",
+      "wideSize": "1200px"
+    },
+    "color": {
+      "palette": [
+        {
+          "slug": "ivory",
+          "name": "Ivory",
+          "color": "#faf6f0"
+        },
+        {
+          "slug": "navy",
+          "name": "Navy",
+          "color": "#0b2233"
+        },
+        {
+          "slug": "stone",
+          "name": "Stone",
+          "color": "#e8e2da"
+        },
+        {
+          "slug": "orange",
+          "name": "Orange",
+          "color": "#b83d14"
+        }
+      ]
+    }
+  }
+}
